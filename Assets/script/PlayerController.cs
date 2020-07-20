@@ -32,7 +32,7 @@ private void Update()
             _isJumping = false;
         }
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy1") && !collision.gameObject.CompareTag("Enemy2") && !collision.gameObject.CompareTag("Enemy3"))
         {
             Destroy(gameObject);
         }

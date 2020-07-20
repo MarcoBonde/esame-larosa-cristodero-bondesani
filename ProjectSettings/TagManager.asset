@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Platform
   - Enemy
+  - GunBullet
+  - SniperBullet
+  - RocketBullet
+  - Enemy1
+  - Enemy2
+  - Enemy3
   layers:
   - Default
   - TransparentFX
