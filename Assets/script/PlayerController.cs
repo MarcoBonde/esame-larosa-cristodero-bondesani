@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController: MonoBehaviour
 {// Stores a reference of the Rigidbody2D component (if any)
     Rigidbody2D _rigidbody;
     public float jumpMultiplier = 10;

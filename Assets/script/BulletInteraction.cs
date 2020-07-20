@@ -4,26 +4,24 @@ using UnityEngine;
 
 public class BulletInteraction : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    
+    Rigidbody2D _rigidbody;
+
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody.velocity = new Vector2(50, 0);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        rb.velocity = new Vector3(50, 0, 0);
-    }
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
        
 
-        if (collision.gameObject)
-        {
-            Destroy(gameObject);
-        }
+        if (collision.gameObject.CompareTag("Enemy1") && !collision.gameObject.CompareTag("Enemy2") && !collision.gameObject.CompareTag("Enemy3") && !collision.gameObject.CompareTag("Platform"))
+            {
+                Destroy(gameObject);
+            }
     }
 }
