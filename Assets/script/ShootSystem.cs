@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootSystem : MonoBehaviour
-{ public Transform prefab;
-    
-   
-
-    // Start is called before the first frame update
+{
+    public Transform prefab;
+        // Start is called before the first frame update
     void Start()
     {
        
