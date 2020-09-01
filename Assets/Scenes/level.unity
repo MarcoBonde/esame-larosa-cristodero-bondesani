@@ -326,6 +326,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: player_components
       objectReference: {fileID: 0}
+    - target: {fileID: 8141060000084774702, guid: 222df41343e46bc4198c98e635b2c087,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141060000084774865, guid: 222df41343e46bc4198c98e635b2c087,
+        type: 3}
+      propertyPath: orthographic size
+      value: 4.766692
+      objectReference: {fileID: 0}
     - target: {fileID: 8141060000629113970, guid: 222df41343e46bc4198c98e635b2c087,
         type: 3}
       propertyPath: prefab
