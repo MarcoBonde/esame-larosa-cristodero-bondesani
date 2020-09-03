@@ -80,10 +80,12 @@ public class PlayerController: MonoBehaviour
         }
         if (shouldChangeLeft)
         {
+            //TODO aggiungere il cambio arma a sinistra
             shouldChangeLeft = false;
         }
         if (shouldChangeRight)
         {
+            //TODO aggiungere il cambio arma a destra
             shouldChangeRight = false;
         }
     }

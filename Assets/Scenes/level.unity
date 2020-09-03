@@ -556,12 +556,17 @@ PrefabInstance:
     - target: {fileID: 5677590382307493467, guid: 222df41343e46bc4198c98e635b2c087,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.1
+      value: 5.24
       objectReference: {fileID: 0}
     - target: {fileID: 5677590382307493467, guid: 222df41343e46bc4198c98e635b2c087,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14
+      value: 11.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208984077608910375, guid: 222df41343e46bc4198c98e635b2c087,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8141059998819059636, guid: 222df41343e46bc4198c98e635b2c087,
         type: 3}
