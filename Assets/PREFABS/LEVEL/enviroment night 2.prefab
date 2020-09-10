@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 7511480840919388196}
   - component: {fileID: 3674167060141398670}
   m_Layer: 10
-  m_Name: GameObject
+  m_Name: deathbarrier
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

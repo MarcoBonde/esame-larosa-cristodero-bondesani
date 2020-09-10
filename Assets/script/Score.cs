@@ -3,7 +3,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Scorreggia : MonoBehaviour //easter egg
+public class Score : MonoBehaviour 
 {
     public Transform player;
     public Text scoreText;
