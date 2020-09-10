@@ -102,7 +102,7 @@ public class PlayerController: MonoBehaviour
             _isJumping = false;
         }
 
-        if (collision.gameObject.CompareTag("Enemy1") && !collision.gameObject.CompareTag("Enemy2") && !collision.gameObject.CompareTag("Enemy") && !collision.gameObject.CompareTag("Enemy3"))
+        if (collision.gameObject.CompareTag("Enemy1") || collision.gameObject.CompareTag("Enemy2") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Enemy3"))
         {
             Destroy(gameObject);
         }
