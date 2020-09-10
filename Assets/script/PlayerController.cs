@@ -25,7 +25,11 @@ public class PlayerController: MonoBehaviour
 
     void Jump()
     {
-        shouldJump = true;
+        //se non sta saltando, allora dovrebbe saltare.
+        if (!_isJumping)
+        {
+            shouldJump = true;
+        }
     }
     void Shoot()
     {
