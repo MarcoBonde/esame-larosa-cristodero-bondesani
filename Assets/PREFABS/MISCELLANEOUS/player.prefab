@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6429455022899478186}
   - component: {fileID: 6429455022899478185}
   - component: {fileID: 6429455022899478184}
-  - component: {fileID: -3971275253140686902}
   - component: {fileID: 3201410547204215410}
   m_Layer: 9
   m_Name: player
@@ -119,18 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpMultiplier: 15.15
---- !u!114 &-3971275253140686902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6429455022899478191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 285b62835df9e4a44b2a550d33603c6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
 --- !u!60 &3201410547204215410
 PolygonCollider2D:
   m_ObjectHideFlags: 0

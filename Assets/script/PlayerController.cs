@@ -9,7 +9,8 @@ public class PlayerController: MonoBehaviour
     Rigidbody2D _rigidbody;
     public float jumpMultiplier = 10;
     bool _isJumping;
-    public Transform prefab;
+    public Transform bullet_gun;
+    public Transform gun;
 
     private bool shouldJump, shouldStomp, shouldChangeLeft, shouldChangeRight, shouldShoot;
 
@@ -79,7 +80,7 @@ public class PlayerController: MonoBehaviour
         }
         if (shouldShoot)
         {
-            Instantiate(prefab);
+            Instantiate(bullet_gun, gun, false);
             shouldShoot = false;
         }
         if (shouldChangeLeft)
