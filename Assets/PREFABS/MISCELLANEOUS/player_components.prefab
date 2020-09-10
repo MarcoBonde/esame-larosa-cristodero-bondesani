@@ -195,6 +195,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6758950877337937208, guid: 0264475003122cc4c865eb80f4e1be9a,
         type: 3}
+    - target: {fileID: 6429455022899478184, guid: 4bb67767d65ff914f9abaf4dca59b4f0,
+        type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 5677590382307493467}
+    - target: {fileID: 6429455022899478184, guid: 4bb67767d65ff914f9abaf4dca59b4f0,
+        type: 3}
+      propertyPath: bullet_sniper
+      value: 
+      objectReference: {fileID: 6586218664869483470, guid: 4c849e5065bc0b1468f4c8075c18d3e2,
+        type: 3}
+    - target: {fileID: 6429455022899478184, guid: 4bb67767d65ff914f9abaf4dca59b4f0,
+        type: 3}
+      propertyPath: bullet_rocket
+      value: 
+      objectReference: {fileID: 485007680656326568, guid: 477171461473eaa4d9550748eb0af279,
+        type: 3}
     - target: {fileID: 6429455022899478185, guid: 4bb67767d65ff914f9abaf4dca59b4f0,
         type: 3}
       propertyPath: m_Constraints

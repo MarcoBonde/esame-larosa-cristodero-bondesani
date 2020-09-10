@@ -11,6 +11,9 @@ public class PlayerController: MonoBehaviour
     bool _isJumping;
     public Transform bullet_gun;
     public Transform gun;
+    public Transform bullet_sniper;
+    public Transform bullet_rocket;
+
 
     private bool shouldJump, shouldStomp, shouldChangeLeft, shouldChangeRight, shouldShoot;
 
