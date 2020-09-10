@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletInteraction : MonoBehaviour
+public class enemybulletinteraction : MonoBehaviour
 {
     Rigidbody2D _rigidbody;
 
@@ -10,18 +10,18 @@ public class BulletInteraction : MonoBehaviour
     void Update()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _rigidbody.velocity = new Vector2(50, 0);
+        _rigidbody.velocity = new Vector2(-50, 0);
     }
 
     // Update is called once per frame
-    
+
     void OnCollisionEnter2D(Collision2D collision)
     {
 
 
-        if (collision.gameObject.CompareTag("Enemy1") || collision.gameObject.CompareTag("Platform"))
-            {
-                Destroy(gameObject);
-            }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
