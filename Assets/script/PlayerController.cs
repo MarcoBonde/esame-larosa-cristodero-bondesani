@@ -9,10 +9,13 @@ public class PlayerController: MonoBehaviour
     Rigidbody2D _rigidbody;
     public float jumpMultiplier = 10;
     bool _isJumping;
-    public Transform bullet_gun;
     public Transform gun;
+    public Transform bullet_gun;
     public Transform bullet_sniper;
     public Transform bullet_rocket;
+    private Transform shooting_bullet;
+    private int ammo_sniper;
+    private int ammo_rocket;
 
 
     private bool shouldJump, shouldStomp, shouldChangeLeft, shouldChangeRight, shouldShoot;
@@ -25,6 +28,9 @@ public class PlayerController: MonoBehaviour
         InputManager.Singleton.SwipeLeft.AddListener(ChangeWeaponLeft);
         InputManager.Singleton.SwipeRight.AddListener(ChangeWapeonRight);
         InputManager.Singleton.SwipeDown.AddListener(StompGround);
+        shooting_bullet = bullet_gun;
+        ammo_rocket = 0;
+        ammo_sniper = 0;
     }
 
     void Jump()
@@ -53,19 +59,60 @@ public class PlayerController: MonoBehaviour
     }
     private void Update()
     {
-        /*
-        if (Input.GetButtonDown("Jump") && !_isJumping)
-        {
-            _isJumping = true;
-
-            Vector2 jumpForce = Vector2.up * jumpMultiplier;
-
-            _rigidbody.AddForce(jumpForce, ForceMode2D.Impulse);
-        }
-        
-        */
     }
 
+    private void BulletToShoot(bool swipeRight) {
+        if (shooting_bullet == bullet_gun)
+        {
+            if (swipeRight && ammo_sniper != 0)
+            {
+                shooting_bullet = bullet_sniper;
+            }
+            else if (swipeRight && ammo_rocket != 0)
+            {
+                shooting_bullet = bullet_rocket;
+            }
+            else if (!swipeRight && ammo_rocket != 0)
+            {
+                shooting_bullet = bullet_rocket;
+            }
+            else if(!swipeRight && ammo_sniper!=0)
+            {
+                shooting_bullet = bullet_sniper;
+            }
+        }
+        else if (shooting_bullet == bullet_rocket)
+        {
+            if (swipeRight)
+            {
+                shooting_bullet = bullet_gun;
+            }
+            else if (!swipeRight && ammo_sniper != 0)
+            {
+                shooting_bullet = bullet_sniper;
+            }
+            else if (!swipeRight && ammo_rocket != 0)
+            {
+                shooting_bullet = bullet_rocket;
+            }
+        }
+        else
+        {
+            if (swipeRight && ammo_rocket != 0)
+            {
+                shooting_bullet = bullet_rocket;
+            }
+            else if (swipeRight && ammo_sniper != 0)
+            {
+                shooting_bullet = bullet_sniper;
+            }
+            else
+            {
+                shooting_bullet = bullet_gun;
+            }
+        }
+        Debug.Log(" Sparerò: " +shooting_bullet);
+    }
     private void FixedUpdate()
     {
         if (shouldJump)
@@ -83,17 +130,32 @@ public class PlayerController: MonoBehaviour
         }
         if (shouldShoot)
         {
-            Instantiate(bullet_gun, gun, false);
+            Instantiate(shooting_bullet, gun, false);
+            if (shooting_bullet == bullet_sniper) {
+                ammo_sniper = ammo_sniper - 1;
+                if (ammo_sniper == 0)
+                {
+                    BulletToShoot(true);
+                }
+            } else if (shooting_bullet== bullet_rocket) {
+                ammo_rocket = ammo_rocket - 1;
+                if (ammo_rocket == 0)
+                {
+                    BulletToShoot(true);
+                }
+            }
             shouldShoot = false;
         }
         if (shouldChangeLeft)
         {
             //TODO aggiungere il cambio arma a sinistra
+            BulletToShoot(false);
             shouldChangeLeft = false;
         }
         if (shouldChangeRight)
         {
             //TODO aggiungere il cambio arma a destra
+            BulletToShoot(true);
             shouldChangeRight = false;
         }
     }
