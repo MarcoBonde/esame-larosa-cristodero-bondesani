@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController: MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class PlayerController: MonoBehaviour
     private Transform shooting_bullet;
     private int ammo_sniper;
     private int ammo_rocket;
+    public Text sniperammo;
+    public Text rocketammo;
+    private int ammosniper;
+    private int ammorocket;
 
 
     private bool shouldJump, shouldStomp, shouldChangeLeft, shouldChangeRight, shouldShoot;
@@ -29,8 +34,8 @@ public class PlayerController: MonoBehaviour
         InputManager.Singleton.SwipeRight.AddListener(ChangeWapeonRight);
         InputManager.Singleton.SwipeDown.AddListener(StompGround);
         shooting_bullet = bullet_gun;
-        ammo_rocket = 0;
-        ammo_sniper = 0;
+        ammo_rocket = 2;
+        ammo_sniper = 2;
     }
 
     void Jump()
@@ -170,6 +175,24 @@ public class PlayerController: MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy1") || collision.gameObject.CompareTag("Enemy2") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Enemy3"))
         {
             Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Rocketammo"))
+
+        {
+            ammo_rocket = +1;
+            ammorocket += 1;
+            rocketammo.text = ammorocket.ToString();
+            
+        }
+
+        if (collision.gameObject.CompareTag("Sniperammo"))
+
+        {
+            ammo_sniper = +1;
+            ammosniper += 1;
+            sniperammo.text = ammosniper.ToString();
+            
         }
     }
 
