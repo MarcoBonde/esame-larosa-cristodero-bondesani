@@ -17,11 +17,8 @@ public class PlayerController: MonoBehaviour
     private Transform shooting_bullet;
     private int ammo_sniper;
     private int ammo_rocket;
-    public Text sniperammo;
-    public Text rocketammo;
-    private int ammosniper;
-    private int ammorocket;
-
+    public Text ui_sniper_ammo;
+    public Text ui_rocket_ammo;
 
     private bool shouldJump, shouldStomp, shouldChangeLeft, shouldChangeRight, shouldShoot;
 
@@ -36,6 +33,8 @@ public class PlayerController: MonoBehaviour
         shooting_bullet = bullet_gun;
         ammo_rocket = 2;
         ammo_sniper = 2;
+        ui_sniper_ammo.text = ammo_sniper.ToString();
+        ui_rocket_ammo.text = ammo_rocket.ToString();
     }
 
     void Jump()
@@ -112,7 +111,6 @@ public class PlayerController: MonoBehaviour
                 shooting_bullet = bullet_gun;
             }
         }
-        Debug.Log(" Sparerò: " +shooting_bullet);
     }
     private void FixedUpdate()
     {
@@ -133,13 +131,15 @@ public class PlayerController: MonoBehaviour
         {
             Instantiate(shooting_bullet, gun, false);
             if (shooting_bullet == bullet_sniper) {
-                ammo_sniper = ammo_sniper - 1;
+                ammo_sniper -= 1;
+                ui_sniper_ammo.text = ammo_sniper.ToString();
                 if (ammo_sniper == 0)
                 {
                     BulletToShoot(true);
                 }
             } else if (shooting_bullet== bullet_rocket) {
-                ammo_rocket = ammo_rocket - 1;
+                ammo_rocket -= 1;
+                ui_rocket_ammo.text = ammo_rocket.ToString();
                 if (ammo_rocket == 0)
                 {
                     BulletToShoot(true);
@@ -149,13 +149,11 @@ public class PlayerController: MonoBehaviour
         }
         if (shouldChangeLeft)
         {
-            //TODO aggiungere il cambio arma a sinistra
             BulletToShoot(false);
             shouldChangeLeft = false;
         }
         if (shouldChangeRight)
         {
-            //TODO aggiungere il cambio arma a destra
             BulletToShoot(true);
             shouldChangeRight = false;
         }
@@ -176,19 +174,15 @@ public class PlayerController: MonoBehaviour
         if (collision.gameObject.CompareTag("Rocketammo"))
 
         {
-            ammo_rocket = +1;
-            ammorocket += 1;
-            rocketammo.text = ammorocket.ToString();
-            
+            ammo_rocket += 1;
+            ui_rocket_ammo.text = ammo_rocket.ToString();
         }
 
         if (collision.gameObject.CompareTag("Sniperammo"))
 
         {
-            ammo_sniper = +1;
-            ammosniper += 1;
-            sniperammo.text = ammosniper.ToString();
-            
+            ammo_sniper += 1;
+            ui_sniper_ammo.text = ammo_sniper.ToString();
         }
     }
 
