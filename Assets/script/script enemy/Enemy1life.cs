@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemy1life : MonoBehaviour
 {
     // Start is called before the first frame update
-   
 
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D collision)

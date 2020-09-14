@@ -19,7 +19,7 @@ public class BulletInteraction : MonoBehaviour
     {
 
 
-        if (collision.gameObject.CompareTag("Enemy1") || collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Enemy1") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Enemy"))
             {
                 Destroy(gameObject);
             }
