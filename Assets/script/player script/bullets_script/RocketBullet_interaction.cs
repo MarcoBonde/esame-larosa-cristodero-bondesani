@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletInteraction : MonoBehaviour
+public class RocketBullet_interaction : MonoBehaviour
 {
     Rigidbody2D _rigidbody;
 

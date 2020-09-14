@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 6758950877337937208}
   - component: {fileID: 1864673893940394698}
   - component: {fileID: 3806122826210191691}
-  - component: {fileID: 1628645706369161129}
   - component: {fileID: 8034648360907384884}
+  - component: {fileID: 4951681515068131069}
   m_Layer: 0
-  m_Name: gun bullet 1
+  m_Name: sniper bullet
   m_TagString: GunBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,18 +266,6 @@ PolygonCollider2D:
       - {x: 1.7199999, y: -3.6599998}
       - {x: 3, y: -3.6599998}
       - {x: 3.02, y: -3.6399999}
---- !u!114 &1628645706369161129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9073299119284339563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b03b73d8c7aa847ae6c341b08c2fbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &8034648360907384884
 Rigidbody2D:
   serializedVersion: 4
@@ -299,3 +287,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4951681515068131069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073299119284339563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1c29bad3b50d64b9a171166be617cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
