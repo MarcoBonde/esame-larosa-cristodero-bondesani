@@ -19,7 +19,6 @@ public class PlayerController: MonoBehaviour
     private int ammo_rocket;
     public Text ui_sniper_ammo;
     public Text ui_rocket_ammo;
-
     private bool shouldJump, shouldStomp, shouldChangeLeft, shouldChangeRight, shouldShoot;
 
     private void Start()
@@ -64,7 +63,6 @@ public class PlayerController: MonoBehaviour
     private void Update()
     {
     }
-
     private void BulletToShoot(bool swipeRight) {
         if (shooting_bullet == bullet_gun)
         {

@@ -14,6 +14,7 @@ TagManager:
   - Enemy3
   - Rocketammo
   - Sniperammo
+  - StageLoader
   layers:
   - Default
   - TransparentFX
