@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: 4938790459654269560}
   m_Layer: 0
   m_Name: enviroment night 2
-  m_TagString: Untagged
+  m_TagString: stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

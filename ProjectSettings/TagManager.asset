@@ -15,6 +15,7 @@ TagManager:
   - Rocketammo
   - Sniperammo
   - StageLoader
+  - stage
   layers:
   - Default
   - TransparentFX
