@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 728583509760670252, guid: bd53d5e435ced4847814b9e960dc0600,
+        type: 3}
+      propertyPath: m_TagString
+      value: endstage
+      objectReference: {fileID: 0}
     - target: {fileID: 4938790459654269560, guid: bd53d5e435ced4847814b9e960dc0600,
         type: 3}
       propertyPath: m_Enabled
@@ -573,8 +578,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e1803852810f44f97d73ee235bd57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stages: []
-  numeri: 
+  stages:
+  - {fileID: 8462576284837668316, guid: 89f4b8d50ff5b074eb7a333383068987, type: 3}
+  - {fileID: 5186702829634572225, guid: bd53d5e435ced4847814b9e960dc0600, type: 3}
+  - {fileID: 5186702829634572225, guid: 68456fb65a193fc41984e1d018d18f7c, type: 3}
+  - {fileID: 6712965125106817063, guid: 8f6b6b0783d6e3647a32b733c0ce5b84, type: 3}
 --- !u!4 &1517262917
 Transform:
   m_ObjectHideFlags: 0
@@ -873,12 +881,12 @@ PrefabInstance:
     - target: {fileID: 8141059998819059636, guid: 222df41343e46bc4198c98e635b2c087,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.83
+      value: -6.44
       objectReference: {fileID: 0}
     - target: {fileID: 8141059998819059636, guid: 222df41343e46bc4198c98e635b2c087,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.83
+      value: 1.78
       objectReference: {fileID: 0}
     - target: {fileID: 8141059998819059636, guid: 222df41343e46bc4198c98e635b2c087,
         type: 3}

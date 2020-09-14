@@ -4,24 +4,44 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
-    private GameObject stage1;
-    private GameObject stage2;
-    public GameObject[] stages = new GameObject[10];
+    private GameObject curStage;
+    private GameObject lastStage;
+    public GameObject[] stages;
+    private bool next=false;
+    private Quaternion q = new Quaternion();
     // Start is called before the first frame update
     void Start()
     {
-        PlayerController.Singleton.NextStage.AddListener(NextStage);
+        StartCoroutine(NextStage());
+        PlayerController.Singleton.NextStage.AddListener(ShouldNextStage);
+        curStage = GameObject.FindGameObjectWithTag("stage");
     }
-    void NextStage()
+    void ShouldNextStage() {
+        next = true;
+    }
+    IEnumerator NextStage()
     {
-
+        while (true)
+        {
+            if (next)
+            {
+                GameObject stageTemp = lastStage;
+                lastStage = curStage;
+                Destroy(stageTemp);
+                int num = Random.Range(1, stages.Length);
+                curStage = stages[num];
+                GameObject spawner = GameObject.FindWithTag("endstage");
+                Instantiate(curStage, spawner.transform.position, q);
+                Destroy(spawner);
+                yield return new WaitForSeconds(1);
+                next = false;
+            }
+            yield return new WaitForFixedUpdate();
+        }
     }
     // Update is called once per frame
     void Update()
     {
-        if ()
-        {
-
-        }
+        
     }
 }
