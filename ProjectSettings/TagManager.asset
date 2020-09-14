@@ -16,6 +16,7 @@ TagManager:
   - Sniperammo
   - StageLoader
   - stage
+  - endstage
   layers:
   - Default
   - TransparentFX

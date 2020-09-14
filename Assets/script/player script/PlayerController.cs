@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class PlayerController: MonoBehaviour
 {
@@ -20,7 +21,13 @@ public class PlayerController: MonoBehaviour
     public Text ui_sniper_ammo;
     public Text ui_rocket_ammo;
     private bool shouldJump, shouldStomp, shouldChangeLeft, shouldChangeRight, shouldShoot;
+    public static PlayerController Singleton;
+    public UnityEvent NextStage;
 
+    private void OnEnable()
+    {
+        Singleton = this;
+    }
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -162,6 +169,10 @@ public class PlayerController: MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             _isJumping = false;
+        }
+        if (collision.gameObject.CompareTag("StageLoader"))
+        {
+            NextStage.Invoke();
         }
 
         if (collision.gameObject.CompareTag("Enemy1") || collision.gameObject.CompareTag("Enemy2") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Enemy3"))
