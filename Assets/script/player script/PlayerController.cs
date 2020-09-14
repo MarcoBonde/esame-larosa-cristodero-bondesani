@@ -96,9 +96,9 @@ public class PlayerController: MonoBehaviour
             {
                 shooting_bullet = bullet_sniper;
             }
-            else if (!swipeRight && ammo_rocket != 0)
+            else
             {
-                shooting_bullet = bullet_rocket;
+                shooting_bullet = bullet_gun;
             }
         }
         else
@@ -106,10 +106,6 @@ public class PlayerController: MonoBehaviour
             if (swipeRight && ammo_rocket != 0)
             {
                 shooting_bullet = bullet_rocket;
-            }
-            else if (swipeRight && ammo_sniper != 0)
-            {
-                shooting_bullet = bullet_sniper;
             }
             else
             {
