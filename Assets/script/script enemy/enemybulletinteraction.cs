@@ -10,12 +10,31 @@ public class Enemybulletinteraction : MonoBehaviour
     void Update()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _rigidbody.velocity = new Vector2(-50, 0);
+        
     }
 
-    // Update is called once per frame
 
-    void OnCollisionEnter2D(Collision2D collision)
+    // See Order of Execution for Event Functions for information on FixedUpdate() and Update() related to physics queries
+    void FixedUpdate()
+    { 
+
+        RaycastHit2D hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector2.left), 1000))
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.left), Color.black);
+            Debug.Log("Did Hit");
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.left) * 1000, Color.red);
+            Debug.Log("Did not Hit");
+        }
+    }
+
+// Update is called once per frame
+
+void OnCollisionEnter2D(Collision2D collision)
     {
 
 
@@ -25,3 +44,14 @@ public class Enemybulletinteraction : MonoBehaviour
         }
     }
 }
+
+    // Float a rigidbody object a set distance above a surface.
+
+    
+
+
+
+
+
+
+
