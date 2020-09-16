@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 69353358609892532}
   - component: {fileID: -5571867035752717562}
   - component: {fileID: 5752387935173941148}
+  - component: {fileID: 894156629584165262}
   m_Layer: 10
   m_Name: enemy v2
   m_TagString: Enemy2
@@ -302,6 +303,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hurtSound: {fileID: 0}
+--- !u!114 &894156629584165262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049458499504978498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c63baade7740a0543a2e03c680a04c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShootSpawner: {fileID: 8402566130991094743}
+  bullet_type: {fileID: 6758950877337937208, guid: 777c246f7683e79488d143d0129c3430,
+    type: 3}
+  laserLength: 50
 --- !u!1 &2149499849028046741
 GameObject:
   m_ObjectHideFlags: 0

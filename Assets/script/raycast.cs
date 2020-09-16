@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class raycast : MonoBehaviour
 {
-    public Vector3 ShootOffset;
+    
     public Transform ShootSpawner;
+    public Transform bullet_type;
+    public float laserLength = 50f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +31,8 @@ public class raycast : MonoBehaviour
         //If the collider of the object hit is not NUll
         if (hit.collider != null)
         {
-            //hit.collider.tag == "Player"
+            if (hit.collider.tag == "Player")
+                Instantiate(bullet_type, ShootSpawner.position, ShootSpawner.rotation);
 
             //Hit something, print the tag of the object
             Debug.Log("Hitting: " + hit.collider.tag);
