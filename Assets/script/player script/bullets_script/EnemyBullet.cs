@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
+
+    public AudioSource gunshotSound;
+
     Rigidbody2D _rigidbody;
     public float speed;
 
     // Start is called before the first frame update
+
+    void Start()
+    {
+        gunshotSound = GetComponent<AudioSource>();
+        gunshotSound.Play();
+    }
     void Update()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
