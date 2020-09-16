@@ -24,6 +24,8 @@ public class PlayerController: MonoBehaviour
     public static PlayerController Singleton;
     public UnityEvent NextStage;
 
+    public AudioSource jumpSound;
+
     private void OnEnable()
     {
         Singleton = this;
@@ -41,6 +43,8 @@ public class PlayerController: MonoBehaviour
         ammo_sniper = 2;
         ui_sniper_ammo.text = ammo_sniper.ToString();
         ui_rocket_ammo.text = ammo_rocket.ToString();
+
+        jumpSound = GetComponent<AudioSource>();
     }
 
     void Jump()
@@ -49,11 +53,14 @@ public class PlayerController: MonoBehaviour
         if (!_isJumping)
         {
             shouldJump = true;
+
+            jumpSound.Play();
         }
     }
     void Shoot()
     {
         shouldShoot = true;
+
     }
     void ChangeWeaponLeft()
     {
