@@ -24,7 +24,7 @@ public class PlayerController: MonoBehaviour
     public static PlayerController Singleton;
     public UnityEvent NextStage;
 
-    public AudioSource jumpSound;
+    public AudioSource[] Sounds;
 
     private void OnEnable()
     {
@@ -44,7 +44,8 @@ public class PlayerController: MonoBehaviour
         ui_sniper_ammo.text = ammo_sniper.ToString();
         ui_rocket_ammo.text = ammo_rocket.ToString();
 
-        jumpSound = GetComponent<AudioSource>();
+        Sounds = GetComponents<AudioSource>();
+        
     }
 
     void Jump()
@@ -54,7 +55,7 @@ public class PlayerController: MonoBehaviour
         {
             shouldJump = true;
 
-            jumpSound.Play();
+            Sounds[0].Play();
         }
     }
     void Shoot()
@@ -186,6 +187,7 @@ public class PlayerController: MonoBehaviour
             || collision.gameObject.CompareTag("Enemy3") || collision.gameObject.CompareTag("enemybullet"))
         {
             Destroy(gameObject);
+            Sounds[1].Play();
         }
 
         if (collision.gameObject.CompareTag("Rocketammo"))

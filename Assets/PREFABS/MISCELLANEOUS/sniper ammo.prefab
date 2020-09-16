@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7476939750192215283}
   - component: {fileID: 1539504433657245836}
   - component: {fileID: 3021248798038162489}
-  - component: {fileID: 7671266226363728833}
+  - component: {fileID: -2895572760754257757}
   m_Layer: 0
   m_Name: sniper ammo
   m_TagString: Untagged
@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impulseMagnitude: {x: 2.6, y: 3, z: 0}
+  Munizioni: {fileID: -2895572760754257757}
 --- !u!50 &3021248798038162489
 Rigidbody2D:
   serializedVersion: 4
@@ -159,7 +160,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!82 &7671266226363728833
+--- !u!82 &-2895572760754257757
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

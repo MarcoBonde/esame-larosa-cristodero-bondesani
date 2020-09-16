@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30699d334e5ad77478676df2dde8d98e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MunizioniSound: {fileID: 0}
+  MunizioniSound: {fileID: 2687339255992814038}
 --- !u!82 &2687339255992814038
 AudioSource:
   m_ObjectHideFlags: 0
