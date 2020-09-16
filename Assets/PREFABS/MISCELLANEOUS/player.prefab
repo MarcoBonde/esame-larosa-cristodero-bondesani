@@ -104,7 +104,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!114 &6429455022899478184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,7 +118,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpMultiplier: 15.15
-  prefab: {fileID: 0}
+  gun: {fileID: 0}
+  bullet_gun: {fileID: 0}
+  bullet_sniper: {fileID: 0}
+  bullet_rocket: {fileID: 0}
+  ui_sniper_ammo: {fileID: 0}
+  ui_rocket_ammo: {fileID: 0}
+  NextStage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!60 &3201410547204215410
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6608379449648329603}
   m_Layer: 0
   m_Name: enemy bullet
-  m_TagString: Enemy
+  m_TagString: enemybullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -231,7 +231,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
 --- !u!114 &6608379449648329603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,4 +244,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f743eda974fe55b46a13400dd098da10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1.93
+  speed: -3.45

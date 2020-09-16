@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 1628645706369161129}
   - component: {fileID: 8034648360907384884}
   m_Layer: 0
-  m_Name: gun bullet 2
-  m_TagString: GunBullet
+  m_Name: rocket bullet
+  m_TagString: RocketBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

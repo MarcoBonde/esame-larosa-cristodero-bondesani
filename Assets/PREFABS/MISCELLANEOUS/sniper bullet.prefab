@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4951681515068131069}
   m_Layer: 0
   m_Name: sniper bullet
-  m_TagString: GunBullet
+  m_TagString: SniperBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -299,3 +299,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1c29bad3b50d64b9a171166be617cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 50

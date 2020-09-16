@@ -318,7 +318,7 @@ MonoBehaviour:
   ShootSpawner: {fileID: 8402566130991094743}
   bullet_type: {fileID: 6758950877337937208, guid: 777c246f7683e79488d143d0129c3430,
     type: 3}
-  laserLength: 50
+  laserLength: 12
 --- !u!1 &2149499849028046741
 GameObject:
   m_ObjectHideFlags: 0

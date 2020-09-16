@@ -17,6 +17,7 @@ TagManager:
   - StageLoader
   - stage
   - endstage
+  - enemybullet
   layers:
   - Default
   - TransparentFX
