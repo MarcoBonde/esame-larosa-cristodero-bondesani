@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class GunBullet_interaction : MonoBehaviour
 {
+
+    public AudioSource gunshotSound;
+
     Rigidbody2D _rigidbody;
+
+    void Start()
+    {
+
+        gunshotSound = GetComponent<AudioSource>();
+
+        gunshotSound.Play();
+
+    }
 
     // Start is called before the first frame update
     void Update()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _rigidbody.velocity = new Vector2(50, 0);
+
     }
 
     // Update is called once per frame
