@@ -29,7 +29,7 @@ public class raycast : MonoBehaviour
         //If the collider of the object hit is not NUll
         if (hit.collider != null)
         {
-            hit.collider.tag == "Player"
+            //hit.collider.tag == "Player"
 
             //Hit something, print the tag of the object
             Debug.Log("Hitting: " + hit.collider.tag);
