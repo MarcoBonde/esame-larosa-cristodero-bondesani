@@ -25,10 +25,10 @@ public class StageManager : MonoBehaviour
         {
             if (next)
             {
-                GameObject stageTemp = lastStage;
+                GameObject tempStage = lastStage;
                 lastStage = curStage;
-                Destroy(stageTemp);
-                int num = Random.Range(1, stages.Length);
+                Destroy(tempStage);
+                int num = Random.Range(0, stages.Length);
                 curStage = stages[num];
                 GameObject spawner = GameObject.FindWithTag("endstage");
                 Instantiate(curStage, spawner.transform.position, q);
