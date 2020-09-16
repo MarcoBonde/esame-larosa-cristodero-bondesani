@@ -31,7 +31,7 @@ public class StageManager : MonoBehaviour
                 int num = Random.Range(0, stages.Length);
                 curStage = stages[num];
                 GameObject spawner = GameObject.FindWithTag("endstage");
-                Instantiate(curStage, spawner.transform.position, q);
+                curStage = Instantiate(curStage, spawner.transform.position, q);
                 Destroy(spawner);
                 yield return new WaitForSeconds(1);
                 next = false;
