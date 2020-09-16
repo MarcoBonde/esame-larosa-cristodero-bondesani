@@ -31,7 +31,8 @@ public class RocketBullet_interaction : MonoBehaviour
     {
 
 
-        if (collision.gameObject.CompareTag("Enemy1") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Enemy3") || collision.gameObject.CompareTag("Enemy2"))
+        if (collision.gameObject.CompareTag("Enemy1") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Enemy") 
+            || collision.gameObject.CompareTag("Enemy3") || collision.gameObject.CompareTag("Enemy2"))
             {
                 Destroy(gameObject);
             }

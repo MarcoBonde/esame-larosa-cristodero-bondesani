@@ -33,9 +33,13 @@ public class EnemyBullet : MonoBehaviour
     {
 
 
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Enemy")
+            || collision.gameObject.CompareTag("GunBullet") || collision.gameObject.CompareTag("SniperBullet") || collision.gameObject.CompareTag("RocketBullet"))
             {
-                Destroy(gameObject);
+
+             
+            Destroy(gameObject);
+            
             }
     }
 }
