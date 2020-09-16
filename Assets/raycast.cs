@@ -34,9 +34,9 @@ public class raycast : MonoBehaviour
             //Hit something, print the tag of the object
             Debug.Log("Hitting: " + hit.collider.tag);
             //Get the sprite renderer component of the object
-            SpriteRenderer sprite = hit.collider.gameObject.GetComponent<SpriteRenderer>();
+            //SpriteRenderer sprite = hit.collider.gameObject.GetComponent<SpriteRenderer>();
             //Change the sprite color
-            sprite.color = Color.green;
+            //sprite.color = Color.green;
 
 
             //Method to draw the ray in scene for debug purpose
