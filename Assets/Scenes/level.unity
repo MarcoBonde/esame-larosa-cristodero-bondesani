@@ -784,7 +784,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e1803852810f44f97d73ee235bd57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stages: []
+  stages:
+  - {fileID: 8462576284837668316, guid: 89f4b8d50ff5b074eb7a333383068987, type: 3}
+  - {fileID: 5186702829634572225, guid: bd53d5e435ced4847814b9e960dc0600, type: 3}
+  - {fileID: 5186702829634572225, guid: 68456fb65a193fc41984e1d018d18f7c, type: 3}
+  - {fileID: 6712965125106817063, guid: 8f6b6b0783d6e3647a32b733c0ce5b84, type: 3}
 --- !u!4 &1517262917
 Transform:
   m_ObjectHideFlags: 0
