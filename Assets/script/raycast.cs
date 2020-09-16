@@ -35,7 +35,7 @@ public class raycast : MonoBehaviour
                 Instantiate(bullet_type, ShootSpawner.position, ShootSpawner.rotation);
 
             //Hit something, print the tag of the object
-            Debug.Log("Hitting: " + hit.collider.tag);
+            //Debug.Log("Hitting: " + hit.collider.tag);
             //Get the sprite renderer component of the object
             //SpriteRenderer sprite = hit.collider.gameObject.GetComponent<SpriteRenderer>();
             //Change the sprite color

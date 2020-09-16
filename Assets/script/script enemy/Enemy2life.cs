@@ -10,7 +10,7 @@ public class Enemy2life : MonoBehaviour
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("SniperBullet") && !collision.gameObject.CompareTag("RocketBullet"))
+        if (collision.gameObject.CompareTag("SniperBullet") || collision.gameObject.CompareTag("RocketBullet"))
         {
             Destroy(gameObject);
         }

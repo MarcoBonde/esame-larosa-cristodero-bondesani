@@ -11,7 +11,7 @@ public class Enemy1life : MonoBehaviour
     {
         {
 
-            if (collision.gameObject.CompareTag("GunBullet") && !collision.gameObject.CompareTag("SniperBullet") && !collision.gameObject.CompareTag("RocketBullet"))
+            if (collision.gameObject.CompareTag("GunBullet") || collision.gameObject.CompareTag("SniperBullet") || collision.gameObject.CompareTag("RocketBullet"))
             {
                 Destroy(gameObject);
             }
