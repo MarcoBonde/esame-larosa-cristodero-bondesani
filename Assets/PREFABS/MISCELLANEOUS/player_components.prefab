@@ -212,6 +212,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 485007680656326568, guid: 477171461473eaa4d9550748eb0af279,
         type: 3}
+    - target: {fileID: 6429455022899478184, guid: 4bb67767d65ff914f9abaf4dca59b4f0,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 3408095946398667636, guid: 4dc6d1b6a3fe98643a95818d39fd22df,
+        type: 3}
     - target: {fileID: 6429455022899478185, guid: 4bb67767d65ff914f9abaf4dca59b4f0,
         type: 3}
       propertyPath: m_Constraints

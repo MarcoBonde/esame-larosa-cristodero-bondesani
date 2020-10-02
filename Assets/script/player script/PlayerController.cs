@@ -22,6 +22,7 @@ public class PlayerController: MonoBehaviour
     public Text ui_rocket_ammo;
     private bool shouldJump, shouldStomp, shouldChangeLeft, shouldChangeRight, shouldShoot;
     public static PlayerController Singleton;
+
     public UnityEvent NextStage;
 
     public AudioSource[] Sounds;
@@ -187,6 +188,8 @@ public class PlayerController: MonoBehaviour
             || collision.gameObject.CompareTag("Enemy3") || collision.gameObject.CompareTag("enemybullet"))
         {
             Destroy(gameObject);
+            FindObjectOfType<GameManager>().EndGame();
+            
             Sounds[1].Play();
         }
 
