@@ -206,6 +206,9 @@ public class PlayerController: MonoBehaviour
             ammo_sniper += 1;
             ui_sniper_ammo.text = ammo_sniper.ToString();
         }
+
+        
+
     }
 
  
