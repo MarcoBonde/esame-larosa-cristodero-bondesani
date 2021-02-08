@@ -156,7 +156,7 @@ PrefabInstance:
     - target: {fileID: 4938790459654269560, guid: bd53d5e435ced4847814b9e960dc0600,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5186702829634572225, guid: bd53d5e435ced4847814b9e960dc0600,
         type: 3}
@@ -308,6 +308,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 172224517}
   scoreText: {fileID: 1755903014}
+--- !u!95 &172224525
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172224516}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b5cbe13fbcb56e141a381a8fc66de062, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &366419760
 GameObject:
   m_ObjectHideFlags: 0
