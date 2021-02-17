@@ -59,7 +59,7 @@ public class PlayerController: MonoBehaviour
     }
     void Shoot()
     {
-        if (reloading)
+        if (!reloading)
         {
             shouldShoot = true;
             reloading = true;
