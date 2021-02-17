@@ -16,11 +16,16 @@ public class InputManager : MonoBehaviour
         Singleton = this;
     }
 
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(TouchFinder());
         StartCoroutine(ClickFinder());
+        
+       
     }
 
     // Update is called once per frame
@@ -35,14 +40,20 @@ public class InputManager : MonoBehaviour
         {
             if (Mathf.Abs(swipeDelta.x) > Mathf.Abs(swipeDelta.y))
             {
+                
                 if (swipeDelta.x > 0)
                 {
                     SwipeRight.Invoke();
+
+                    
                 }
                 else
                 {
                     SwipeLeft.Invoke();
+                   
                 }
+
+                
             }
             else if (Mathf.Abs(swipeDelta.x) < Mathf.Abs(swipeDelta.y))
             {

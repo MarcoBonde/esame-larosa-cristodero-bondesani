@@ -23,9 +23,14 @@ public class PlayerController: MonoBehaviour
     private bool shouldJump, shouldStomp, shouldChangeLeft, shouldChangeRight, shouldShoot;
     public static PlayerController Singleton;
 
+    private Animator animator;
+
     public UnityEvent NextStage;
 
     public AudioSource[] Sounds;
+
+    bool _StaSaltando;
+
 
     private void OnEnable()
     {
@@ -46,7 +51,11 @@ public class PlayerController: MonoBehaviour
         ui_rocket_ammo.text = ammo_rocket.ToString();
 
         Sounds = GetComponents<AudioSource>();
+
+        animator = GetComponent<Animator>();
+
         
+
     }
 
     void Jump()
@@ -57,7 +66,14 @@ public class PlayerController: MonoBehaviour
             shouldJump = true;
 
             Sounds[0].Play();
+
+          
+
         }
+
+       
+
+       
     }
     void Shoot()
     {
@@ -67,10 +83,20 @@ public class PlayerController: MonoBehaviour
     void ChangeWeaponLeft()
     {
         shouldChangeLeft = true;
+        animator.SetInteger("CurrentArm", animator.GetInteger("CurrentArm") +1);
+        if (animator.GetInteger("CurrentArm") == 3)
+        {
+            animator.SetInteger("CurrentArm", 0);
+        }
     }
     void ChangeWapeonRight()
     {
         shouldChangeRight = true;
+        animator.SetInteger("CurrentArm", animator.GetInteger("CurrentArm") -1);
+        if (animator.GetInteger("CurrentArm") == -1)
+        {
+            animator.SetInteger("CurrentArm", 2);
+        }
     }
     void StompGround()
     {
@@ -78,6 +104,7 @@ public class PlayerController: MonoBehaviour
     }
     private void Update()
     {
+        
     }
     private void BulletToShoot(bool swipeRight) {
         if (shooting_bullet == bullet_gun)
@@ -134,6 +161,23 @@ public class PlayerController: MonoBehaviour
             Vector2 jumpForce = Vector2.up * jumpMultiplier;
             _rigidbody.AddForce(jumpForce, ForceMode2D.Impulse);
             shouldJump = false;
+
+            animator.SetBool("Run", false);
+            
+            if (animator.GetInteger("CurrentArm") == 0)
+            {
+                animator.SetBool("Jump", true);
+            }
+
+            if (animator.GetInteger("CurrentArm") == 1)
+            {
+                animator.SetBool("JumpLanciarazzi", true);
+            }
+
+            if (animator.GetInteger("CurrentArm") == 2)
+            {
+                animator.SetBool("JumpCecchino", true);
+            }
         }
         if (shouldStomp)
         {
@@ -178,7 +222,15 @@ public class PlayerController: MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             _isJumping = false;
+            _StaSaltando = false;
+
+            animator.SetBool("Run", true);
+            animator.SetBool("Jump", false);
+            animator.SetBool("JumpCecchino", false);
+            animator.SetBool("JumpLanciarazzi", false);
+            
         }
+        
         if (collision.gameObject.CompareTag("StageLoader"))
         {
             NextStage.Invoke();
