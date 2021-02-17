@@ -10,6 +10,7 @@ public class raycast : MonoBehaviour
     public float laserLength = 50f;
     private bool reloading;
     private float secondiRicarica;
+    public GameObject exclamation;
 
     // Start is called before the first frame update
     void Start()
@@ -49,11 +50,7 @@ public class raycast : MonoBehaviour
         {
             if (hit.collider.tag == "Player" && (!reloading))
             {
-                Debug.Log("" + reloading);
-                Instantiate(bullet_type, ShootSpawner.position, ShootSpawner.rotation);
-                setRealoding(true);
-                Debug.Log("SPARO COME UN IDIOTA");
-                Debug.Log("" + reloading);
+                StartCoroutine(shoot());
             }
 
             //Hit something, print the tag of the object
@@ -78,5 +75,16 @@ public class raycast : MonoBehaviour
     IEnumerator reload() {
         yield return new WaitForSeconds(secondiRicarica);
         setRealoding(false);
+    }
+    IEnumerator shoot() {
+
+        setRealoding(true);
+        yield return new WaitForSeconds(0.1f);
+        exclamation.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        Instantiate(bullet_type, ShootSpawner.position, ShootSpawner.rotation);
+        yield return new WaitForSeconds(0.4f);
+        exclamation.SetActive(false);
+
     }
 }
