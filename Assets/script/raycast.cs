@@ -4,21 +4,37 @@ using UnityEngine;
 
 public class raycast : MonoBehaviour
 {
-    
+
     public Transform ShootSpawner;
     public Transform bullet_type;
     public float laserLength = 50f;
+    private bool reloading;
+    private float secondiRicarica;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        reloading = false;
+        secondiRicarica = 1.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public bool getRealoading() {
+        return reloading;
+    }
+    public void setRealoding(bool devoRicaricare) {
+        if (devoRicaricare)
+        {
+            reloading = devoRicaricare;
+            StartCoroutine(reload());
+        }
+        else {
+            reloading = false;
+        }
     }
     void FixedUpdate()
     {
@@ -31,8 +47,14 @@ public class raycast : MonoBehaviour
         //If the collider of the object hit is not NUll
         if (hit.collider != null)
         {
-            if (hit.collider.tag == "Player")
+            if (hit.collider.tag == "Player" && (!reloading))
+            {
+                Debug.Log("" + reloading);
                 Instantiate(bullet_type, ShootSpawner.position, ShootSpawner.rotation);
+                setRealoding(true);
+                Debug.Log("SPARO COME UN IDIOTA");
+                Debug.Log("" + reloading);
+            }
 
             //Hit something, print the tag of the object
             //Debug.Log("Hitting: " + hit.collider.tag);
@@ -52,5 +74,9 @@ public class raycast : MonoBehaviour
         }
         
 
+    }
+    IEnumerator reload() {
+        yield return new WaitForSeconds(secondiRicarica);
+        setRealoding(false);
     }
 }

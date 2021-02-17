@@ -22,15 +22,11 @@ public class PlayerController: MonoBehaviour
     public Text ui_rocket_ammo;
     private bool shouldJump, shouldStomp, shouldChangeLeft, shouldChangeRight, shouldShoot;
     public static PlayerController Singleton;
-
     private Animator animator;
-
-    public UnityEvent NextStage;
-
+    private bool reloading;
     public AudioSource[] Sounds;
-
     bool _StaSaltando;
-
+    public UnityEvent NextStage;
 
     private void OnEnable()
     {
@@ -49,54 +45,36 @@ public class PlayerController: MonoBehaviour
         ammo_sniper = 2;
         ui_sniper_ammo.text = ammo_sniper.ToString();
         ui_rocket_ammo.text = ammo_rocket.ToString();
-
         Sounds = GetComponents<AudioSource>();
-
         animator = GetComponent<Animator>();
-
-        
-
     }
-
     void Jump()
     {
         //se non sta saltando, allora dovrebbe saltare.
         if (!_isJumping)
         {
             shouldJump = true;
-
             Sounds[0].Play();
-
-          
-
         }
-
-       
-
-       
     }
     void Shoot()
     {
-        shouldShoot = true;
-
+        if (reloading)
+        {
+            shouldShoot = true;
+            reloading = true;
+            StartCoroutine(Reload());
+        }
     }
     void ChangeWeaponLeft()
     {
         shouldChangeLeft = true;
-        animator.SetInteger("CurrentArm", animator.GetInteger("CurrentArm") +1);
-        if (animator.GetInteger("CurrentArm") == 3)
-        {
-            animator.SetInteger("CurrentArm", 0);
-        }
+
     }
     void ChangeWapeonRight()
     {
         shouldChangeRight = true;
-        animator.SetInteger("CurrentArm", animator.GetInteger("CurrentArm") -1);
-        if (animator.GetInteger("CurrentArm") == -1)
-        {
-            animator.SetInteger("CurrentArm", 2);
-        }
+
     }
     void StompGround()
     {
@@ -112,18 +90,22 @@ public class PlayerController: MonoBehaviour
             if (swipeRight && ammo_sniper != 0)
             {
                 shooting_bullet = bullet_sniper;
+                animator.SetInteger("CurrentArm", 2);
             }
             else if (swipeRight && ammo_rocket != 0)
             {
                 shooting_bullet = bullet_rocket;
+                animator.SetInteger("CurrentArm", 1);
             }
             else if (!swipeRight && ammo_rocket != 0)
             {
                 shooting_bullet = bullet_rocket;
+                animator.SetInteger("CurrentArm", 1);
             }
             else if(!swipeRight && ammo_sniper!=0)
             {
                 shooting_bullet = bullet_sniper;
+                animator.SetInteger("CurrentArm", 2);
             }
         }
         else if (shooting_bullet == bullet_rocket)
@@ -131,14 +113,17 @@ public class PlayerController: MonoBehaviour
             if (swipeRight)
             {
                 shooting_bullet = bullet_gun;
+                animator.SetInteger("CurrentArm", 0);
             }
             else if (!swipeRight && ammo_sniper != 0)
             {
                 shooting_bullet = bullet_sniper;
+                animator.SetInteger("CurrentArm", 2);
             }
             else
             {
                 shooting_bullet = bullet_gun;
+                animator.SetInteger("CurrentArm", 0);
             }
         }
         else
@@ -146,10 +131,12 @@ public class PlayerController: MonoBehaviour
             if (swipeRight && ammo_rocket != 0)
             {
                 shooting_bullet = bullet_rocket;
+                animator.SetInteger("CurrentArm", 1);
             }
             else
             {
                 shooting_bullet = bullet_gun;
+                animator.SetInteger("CurrentArm", 0);
             }
         }
     }
@@ -216,7 +203,6 @@ public class PlayerController: MonoBehaviour
             shouldChangeRight = false;
         }
     }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Platform"))
@@ -230,12 +216,6 @@ public class PlayerController: MonoBehaviour
             animator.SetBool("JumpLanciarazzi", false);
             
         }
-        
-        if (collision.gameObject.CompareTag("StageLoader"))
-        {
-            NextStage.Invoke();
-        }
-
         if (collision.gameObject.CompareTag("Enemy1") || collision.gameObject.CompareTag("Enemy2") || collision.gameObject.CompareTag("Enemy")
             || collision.gameObject.CompareTag("Enemy3") || collision.gameObject.CompareTag("enemybullet"))
         {
@@ -244,24 +224,28 @@ public class PlayerController: MonoBehaviour
             
             Sounds[1].Play();
         }
-
         if (collision.gameObject.CompareTag("Rocketammo"))
 
         {
             ammo_rocket += 1;
             ui_rocket_ammo.text = ammo_rocket.ToString();
         }
-
         if (collision.gameObject.CompareTag("Sniperammo"))
 
         {
             ammo_sniper += 1;
             ui_sniper_ammo.text = ammo_sniper.ToString();
         }
-
-        
-
     }
-
- 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("StageLoader"))
+        {
+            NextStage.Invoke();
+        }
+    }
+    IEnumerator Reload() {
+        yield return new WaitForSeconds(0.5f);
+        reloading = false;
+    }
 }
