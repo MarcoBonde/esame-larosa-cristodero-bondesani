@@ -12,8 +12,9 @@ public class Enemy2life : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("SniperBullet") || collision.gameObject.CompareTag("RocketBullet"))
         {
+            Instantiate(ammocrate, this.transform.position, new Quaternion());
             Destroy(gameObject);
-            Instantiate(ammocrate);
+            
         }
     }
 }

@@ -15,8 +15,10 @@ public class Enemy3life : MonoBehaviour
 
         if (collision.gameObject.CompareTag("RocketBullet"))
         {
+
+            Instantiate(ammocrate, this.transform.position, new Quaternion());
             Destroy(gameObject);
-            Instantiate(ammocrate);
+
         }
     }
 }

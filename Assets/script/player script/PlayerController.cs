@@ -225,16 +225,18 @@ public class PlayerController: MonoBehaviour
             Sounds[1].Play();
         }
         if (collision.gameObject.CompareTag("Rocketammo"))
-
         {
             ammo_rocket += 1;
             ui_rocket_ammo.text = ammo_rocket.ToString();
+            Destroy(collision.gameObject);
+
         }
         if (collision.gameObject.CompareTag("Sniperammo"))
 
         {
             ammo_sniper += 1;
             ui_sniper_ammo.text = ammo_sniper.ToString();
+            Destroy(collision.gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
