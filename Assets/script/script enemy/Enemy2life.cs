@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy2life : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+    public GameObject ammocrate;
 
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D collision)
@@ -13,6 +13,7 @@ public class Enemy2life : MonoBehaviour
         if (collision.gameObject.CompareTag("SniperBullet") || collision.gameObject.CompareTag("RocketBullet"))
         {
             Destroy(gameObject);
+            Instantiate(ammocrate);
         }
     }
 }
