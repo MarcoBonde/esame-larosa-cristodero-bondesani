@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1030105774297528213}
   - component: {fileID: 1559514985213465040}
   - component: {fileID: 2687339255992814038}
-  - component: {fileID: -994969598074923189}
   m_Layer: 0
   m_Name: 'stop rocket ammo '
   m_TagString: Rocketammo
@@ -244,19 +243,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-994969598074923189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030105774297528210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2229a1b2181cdbe4185ff3fc3b254126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!1 &8786014585883205747
 GameObject:
   m_ObjectHideFlags: 0
