@@ -5,7 +5,9 @@ using UnityEngine;
 public class Enemy1life : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    public PolygonCollider2D collide;
+    public SpriteRenderer sprite;
+    public raycast script;
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -13,8 +15,18 @@ public class Enemy1life : MonoBehaviour
 
             if (collision.gameObject.CompareTag("GunBullet") || collision.gameObject.CompareTag("SniperBullet") || collision.gameObject.CompareTag("RocketBullet"))
             {
-                Destroy(gameObject);
+
+                StartCoroutine(DestroyMe());
             }
         }
+    }
+
+    IEnumerator DestroyMe()
+    {
+        collide.enabled = false;
+        sprite.enabled = false;
+        script.enabled = false;
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 }

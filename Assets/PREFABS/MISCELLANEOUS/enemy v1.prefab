@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6953960206430382418}
   - component: {fileID: 622231171940283065}
   - component: {fileID: -7569486477644719994}
-  - component: {fileID: 5780643376384442574}
+  - component: {fileID: 4742598765527557174}
   m_Layer: 10
   m_Name: enemy v1
   m_TagString: Enemy1
@@ -174,6 +174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88392e608bbfc0c40abdb04a809bfc4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collide: {fileID: 2617690984925425448}
+  sprite: {fileID: 3249230801304225315}
+  script: {fileID: 622231171940283065}
 --- !u!50 &6953960206430382418
 Rigidbody2D:
   serializedVersion: 4
@@ -308,7 +311,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5780643376384442574
+--- !u!114 &4742598765527557174
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,7 +320,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3789345126016893099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45a85a9080a9cc345b0d9eb2c60f8951, type: 3}
+  m_Script: {fileID: 11500000, guid: e41ae286296cf834d8628aeaaa3b42c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hurtSound: {fileID: -7569486477644719994}
@@ -416,12 +419,12 @@ PrefabInstance:
     - target: {fileID: 6758950877337937208, guid: 598b766dafd5f604584c0c7f32d99867,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6758950877337937208, guid: 598b766dafd5f604584c0c7f32d99867,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6758950877337937208, guid: 598b766dafd5f604584c0c7f32d99867,
         type: 3}

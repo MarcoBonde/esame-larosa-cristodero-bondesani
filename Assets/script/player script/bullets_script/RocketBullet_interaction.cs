@@ -6,6 +6,8 @@ public class RocketBullet_interaction : MonoBehaviour
 
 {
     Rigidbody2D _rigidbody;
+    public PolygonCollider2D collide;
+    public SpriteRenderer sprite;
 
     public AudioSource gunshotSound;
 
@@ -34,7 +36,14 @@ public class RocketBullet_interaction : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy1") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Enemy") 
             || collision.gameObject.CompareTag("Enemy3") || collision.gameObject.CompareTag("Enemy2"))
             {
-                Destroy(gameObject);
-            }
+            StartCoroutine(DestroyMe());
+        }
+    }
+    IEnumerator DestroyMe()
+    {
+        collide.enabled = false;
+        sprite.enabled = false;
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 }

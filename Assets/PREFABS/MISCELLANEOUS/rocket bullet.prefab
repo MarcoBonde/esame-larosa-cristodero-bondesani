@@ -220,7 +220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33b03b73d8c7aa847ae6c341b08c2fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunshotSound: {fileID: 0}
+  collide: {fileID: 3806122826210191691}
+  sprite: {fileID: 1864673893940394698}
+  gunshotSound: {fileID: -7141994963352622418}
 --- !u!50 &8034648360907384884
 Rigidbody2D:
   serializedVersion: 4

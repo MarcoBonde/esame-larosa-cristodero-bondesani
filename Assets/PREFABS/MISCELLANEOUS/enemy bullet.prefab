@@ -259,8 +259,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f743eda974fe55b46a13400dd098da10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunshotSound: {fileID: 0}
-  speed: -6
+  gunshotSound: {fileID: -4950336353727364332}
+  speed: -8
+  collide: {fileID: 3806122826210191691}
+  sprite: {fileID: 1864673893940394698}
 --- !u!82 &-4950336353727364332
 AudioSource:
   m_ObjectHideFlags: 0
@@ -272,7 +274,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 376198f5c23a3864588325c0f4501f4a, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0.28
   m_Pitch: 1
   Loop: 0

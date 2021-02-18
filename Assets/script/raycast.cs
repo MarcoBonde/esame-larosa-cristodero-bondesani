@@ -83,7 +83,7 @@ public class raycast : MonoBehaviour
         exclamation.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         Instantiate(bullet_type, ShootSpawner.position, ShootSpawner.rotation);
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.6f);
         exclamation.SetActive(false);
 
     }

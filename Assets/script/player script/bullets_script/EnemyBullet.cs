@@ -9,6 +9,8 @@ public class EnemyBullet : MonoBehaviour
 
     Rigidbody2D _rigidbody;
     public float speed;
+    public PolygonCollider2D collide;
+    public SpriteRenderer sprite;
     //private float thrust = 10.0f;
     //public float x, y, z;
 
@@ -37,10 +39,17 @@ public class EnemyBullet : MonoBehaviour
             || collision.gameObject.CompareTag("GunBullet") || collision.gameObject.CompareTag("SniperBullet") || collision.gameObject.CompareTag("RocketBullet"))
             {
 
-             
-            Destroy(gameObject);
-            
-            }
+
+            StartCoroutine(DestroyMe());
+
+        }
+    }
+    IEnumerator DestroyMe()
+    {
+        collide.enabled = false;
+        sprite.enabled = false;
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 }
 

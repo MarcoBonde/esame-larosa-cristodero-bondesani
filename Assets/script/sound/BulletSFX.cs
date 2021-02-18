@@ -10,7 +10,6 @@ public class BulletSFX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         gunshotSound = GetComponent<AudioSource>();
         gunshotSound.Play();
     }

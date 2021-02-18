@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3083259972791037770}
   - component: {fileID: 69353358609892532}
   - component: {fileID: -5571867035752717562}
-  - component: {fileID: 5752387935173941148}
   - component: {fileID: 894156629584165262}
+  - component: {fileID: 3321408686691341145}
   m_Layer: 10
   m_Name: enemy v2
   m_TagString: Enemy2
@@ -176,6 +176,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammocrate: {fileID: 1030105774297528210, guid: 12483948c4b0ce2428f790a61aaca604,
     type: 3}
+  collide: {fileID: 6336515352377277922}
+  sprite: {fileID: 8317445594570064054}
+  script: {fileID: 894156629584165262}
 --- !u!50 &69353358609892532
 Rigidbody2D:
   serializedVersion: 4
@@ -293,19 +296,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5752387935173941148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049458499504978498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45a85a9080a9cc345b0d9eb2c60f8951, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hurtSound: {fileID: -5571867035752717562}
 --- !u!114 &894156629584165262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +313,19 @@ MonoBehaviour:
     type: 3}
   laserLength: 5
   exclamation: {fileID: 7628410057302120674}
+--- !u!114 &3321408686691341145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049458499504978498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ca8d4b8aec4b948baa8ec486c619ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurtSound: {fileID: -5571867035752717562}
 --- !u!1 &2149499849028046741
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,12 +421,12 @@ PrefabInstance:
     - target: {fileID: 6758950877337937208, guid: 598b766dafd5f604584c0c7f32d99867,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6758950877337937208, guid: 598b766dafd5f604584c0c7f32d99867,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6758950877337937208, guid: 598b766dafd5f604584c0c7f32d99867,
         type: 3}

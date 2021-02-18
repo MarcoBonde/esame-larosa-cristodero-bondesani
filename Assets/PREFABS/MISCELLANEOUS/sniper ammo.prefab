@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30699d334e5ad77478676df2dde8d98e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MunizioniSound: {fileID: 0}
+  MunizioniSound: {fileID: -2895572760754257757}
   impulseMagnitude: {x: 5, y: 3, z: 0}
 --- !u!61 &7476939750192215283
 BoxCollider2D:
@@ -113,7 +113,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 2.8607504}
+  m_Offset: {x: -0.16278267, y: 1.4148979}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -124,7 +124,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 23.11, y: 13.529312}
+  m_Size: {x: 20.84523, y: 15.856689}
   m_EdgeRadius: 0
 --- !u!50 &3021248798038162489
 Rigidbody2D:

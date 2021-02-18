@@ -302,6 +302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
+  collide: {fileID: 3806122826210191691}
+  sprite: {fileID: 1864673893940394698}
 --- !u!114 &-3498713579383458289
 MonoBehaviour:
   m_ObjectHideFlags: 0

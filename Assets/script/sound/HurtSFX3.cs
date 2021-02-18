@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HurtSFX : MonoBehaviour
+public class HurtSFX3 : MonoBehaviour
 {
 
     public AudioSource hurtSound;
@@ -19,7 +19,7 @@ public class HurtSFX : MonoBehaviour
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("GunBullet") || collision.gameObject.CompareTag("SniperBullet") || collision.gameObject.CompareTag("RocketBullet"))
+        if ( collision.gameObject.CompareTag("RocketBullet"))
         {
             hurtSound.Play();
         }
