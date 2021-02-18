@@ -219,6 +219,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -25.1
       objectReference: {fileID: 0}
+    - target: {fileID: 989944202383998826, guid: bd53d5e435ced4847814b9e960dc0600,
+        type: 3}
+      propertyPath: collide
+      value: 
+      objectReference: {fileID: 32717599}
+    - target: {fileID: 989944202383998826, guid: bd53d5e435ced4847814b9e960dc0600,
+        type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 32717600}
     - target: {fileID: 1110404190797408854, guid: bd53d5e435ced4847814b9e960dc0600,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -362,6 +372,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: bd53d5e435ced4847814b9e960dc0600, type: 3}
+--- !u!60 &32717599 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6755155969794096948, guid: bd53d5e435ced4847814b9e960dc0600,
+    type: 3}
+  m_PrefabInstance: {fileID: 21373949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &32717600 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6123590056657049151, guid: bd53d5e435ced4847814b9e960dc0600,
+    type: 3}
+  m_PrefabInstance: {fileID: 21373949}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &60793979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1800,7 +1822,7 @@ PrefabInstance:
     - target: {fileID: 8141060000629113971, guid: 222df41343e46bc4198c98e635b2c087,
         type: 3}
       propertyPath: m_Constraints
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6999697292602772752, guid: 222df41343e46bc4198c98e635b2c087, type: 3}

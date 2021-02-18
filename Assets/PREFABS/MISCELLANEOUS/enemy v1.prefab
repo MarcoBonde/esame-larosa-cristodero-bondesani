@@ -213,7 +213,7 @@ MonoBehaviour:
   ShootSpawner: {fileID: 524619463969010560}
   bullet_type: {fileID: 6758950877337937208, guid: 777c246f7683e79488d143d0129c3430,
     type: 3}
-  laserLength: 5
+  laserLength: 9
   exclamation: {fileID: 7566491554700186173}
 --- !u!82 &-7569486477644719994
 AudioSource:

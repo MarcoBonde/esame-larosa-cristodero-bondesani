@@ -40,7 +40,6 @@ public class raycast : MonoBehaviour
     void FixedUpdate()
     {
         //Length of the ray
-        float laserLength = 50f;
         Vector2 startPosition = ShootSpawner.position;
         //Get the first object hit by the ray
         RaycastHit2D hit = Physics2D.Raycast(startPosition, Vector2.left, laserLength);
