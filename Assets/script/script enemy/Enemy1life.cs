@@ -24,9 +24,10 @@ public class Enemy1life : MonoBehaviour
     IEnumerator DestroyMe()
     {
         collide.enabled = false;
-        sprite.enabled = false;
         script.enabled = false;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.3f);
+        sprite.enabled = false;
+        yield return new WaitForSeconds(1.8f);
         Destroy(gameObject);
     }
 }
