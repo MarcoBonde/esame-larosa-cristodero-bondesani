@@ -16,7 +16,7 @@ public class speedometer : MonoBehaviour
     void Update()
     {
         speed = speed + (0.01f*Time.deltaTime);
-        Debug.Log(speed + "");
+        //Debug.Log(speed + "");
         speedBullet = speed + 3.0f ;
     }
 }
