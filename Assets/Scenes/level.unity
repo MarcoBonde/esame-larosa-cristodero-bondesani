@@ -598,25 +598,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 172224517}
   scoreText: {fileID: 1755903014}
---- !u!95 &172224525
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172224516}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b5cbe13fbcb56e141a381a8fc66de062, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &366419760
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4984fc1921c1947a49080a2503fef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinSwipeDelta: 1
+  MinSwipeDelta: 10
   SwipeUp:
     m_PersistentCalls:
       m_Calls: []

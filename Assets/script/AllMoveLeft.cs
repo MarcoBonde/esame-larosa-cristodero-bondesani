@@ -14,7 +14,8 @@ public class AllMoveLeft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+           
             transform.Translate(-Vector2.right * speed * Time.deltaTime);
-        
+            speed = speed + 0.01f * Time.deltaTime;
     }
 }

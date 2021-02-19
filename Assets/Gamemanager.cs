@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     {
        if (GamehasEnded == false)
         GamehasEnded = true;
-        Debug.Log("game over");
         Restart();
     }
      
