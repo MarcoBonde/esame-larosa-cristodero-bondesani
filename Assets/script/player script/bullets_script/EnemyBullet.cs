@@ -13,17 +13,19 @@ public class EnemyBullet : MonoBehaviour
     public SpriteRenderer sprite;
     //private float thrust = 10.0f;
     //public float x, y, z;
+    public GameObject speeder;
 
     // Start is called before the first frame update
 
     void Start()
     {
+        speeder = GameObject.FindGameObjectWithTag("speedometer");
         gunshotSound = GetComponent<AudioSource>();
         gunshotSound.Play();
     }
     void Update()
     {
-        speed = speedometer.getSpeedEnemyBullet();
+        speed = -speeder.GetComponent<speedometer>().speedBullet;
         _rigidbody = GetComponent<Rigidbody2D>();
         _rigidbody.velocity = new Vector2(speed, 0);
         //transform.position = new Vector3(5.0f, -2.0f, 0.0f);

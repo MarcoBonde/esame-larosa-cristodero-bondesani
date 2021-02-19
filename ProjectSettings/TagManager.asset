@@ -18,6 +18,7 @@ TagManager:
   - stage
   - endstage
   - enemybullet
+  - speedometer
   layers:
   - Default
   - TransparentFX

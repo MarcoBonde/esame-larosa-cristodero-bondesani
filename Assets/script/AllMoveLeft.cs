@@ -5,9 +5,11 @@ using UnityEngine;
 public class AllMoveLeft : MonoBehaviour
 {
     public float speed = 5;
+    public GameObject speeder;
     // Start is called before the first frame update
     void Start()
     {
+        speeder = GameObject.FindGameObjectWithTag("speedometer");
     }
 
     // Update is called once per frame
@@ -15,6 +17,6 @@ public class AllMoveLeft : MonoBehaviour
     {
            
             transform.Translate(-Vector2.right * speed * Time.deltaTime);
-            speed = speedometer.getSpeedWorld();
+            speed = speeder.GetComponent<speedometer>().speed;
     }
 }
