@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4984fc1921c1947a49080a2503fef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinSwipeDelta: 10
+  MinSwipeDelta: 50
   SwipeUp:
     m_PersistentCalls:
       m_Calls: []

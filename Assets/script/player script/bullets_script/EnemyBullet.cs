@@ -23,7 +23,7 @@ public class EnemyBullet : MonoBehaviour
     }
     void Update()
     {
-        speed = speed + 0.01f * Time.deltaTime;
+        speed = speedometer.getSpeedEnemyBullet();
         _rigidbody = GetComponent<Rigidbody2D>();
         _rigidbody.velocity = new Vector2(speed, 0);
         //transform.position = new Vector3(5.0f, -2.0f, 0.0f);
